@@ -28,6 +28,13 @@ Player.prototype.dead = function () {
         init();
 }
 
+Player.prototype.decrease_life = function() {
+    console.log("kill");
+    this.life -= 1;
+    if (this.life <= 0)
+        this.dead();    
+}
+
 Player.prototype.accelerate = function (distance) {
     var max = 2;
 

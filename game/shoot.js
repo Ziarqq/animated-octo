@@ -84,6 +84,16 @@ function player_collision()
     if (x < 0)
         player1.graphic.position.x -= x;
 
+    //player collision with an enemy
+    if ((player1.graphic.position.x > enemy1.position.x - 20 && player1.graphic.position.x < enemy1.position.x + 20) &&
+            (player1.graphic.position.y > enemy1.position.y - 20 && player1.graphic.position.y < enemy1.position.y +20))
+    {
+        player1.graphic.position.x = 50;
+        player1.graphic.position.y = 0;
+        player1.decrease_life();
+    }
+        
+
 }
 
 function player_falling()
