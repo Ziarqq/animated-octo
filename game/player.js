@@ -75,7 +75,7 @@ Player.prototype.move = function () {
     else if (this.speed < 0) {
         this.speed = this.speed + 0.04;
     }
-
+    
     this.graphic.position.x = this.position.x;
     this.graphic.position.y = this.position.y;
     
