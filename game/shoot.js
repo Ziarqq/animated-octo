@@ -50,16 +50,18 @@ function bullet_collision()
             scene.remove(player1.bullets[i]);
             player1.bullets.splice(i, 1);
             i--;
+            continue;
         }
         
         if (scene.getObjectByName('enemy1')){
-            if (Math.abs(player1.bullets[i].position.x) === enemy1.position.x||
-            Math.abs(player1.bullets[i].position.y) === enemy1.position.y)
-        {
+            if ((player1.bullets[i].position.x > enemy1.position.x - 5 && player1.bullets[i].position.x < enemy1.position.x + 5) &&
+            (player1.bullets[i].position.y > enemy1.position.y - 5 && player1.bullets[i].position.y < enemy1.position.y + 5)) {
+
             scene.remove(enemy1.graphic);
             scene.remove(player1.bullets[i]);
             player1.bullets.splice(i, 1);
             i--;
+            continue;
         }
         }
 
